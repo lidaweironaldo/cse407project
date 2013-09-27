@@ -4,7 +4,8 @@
 //
 //  Created by Dawei Li on 9/26/13.
 //  Copyright (c) 2013 Dawei Li. All rights reserved.
-//
+//  Also modified from Qutemol
+
 #include<string>
 #include<map>
 #include<iostream>
