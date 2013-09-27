@@ -5,6 +5,7 @@
 //  Created by Dawei Li on 9/26/13.
 //  Copyright (c) 2013 Dawei Li. All rights reserved.
 //
+//  This code is modified from http://qutemol.sourceforge.net/
 
 #ifndef GLTest_Mol_h
 #define GLTest_Mol_h
