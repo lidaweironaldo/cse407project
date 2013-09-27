@@ -236,7 +236,7 @@ int main(int argc, char** argv)
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize (720, 720);
     glutInitWindowPosition (100, 100);
-    glutCreateWindow ("What the fuck");
+    glutCreateWindow ("2D Atoms");
      myInit();
     glutKeyboardFunc(myKeys);
     glutDisplayFunc(display);
