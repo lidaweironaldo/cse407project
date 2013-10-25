@@ -15,6 +15,7 @@
 		2820D2A017F483FB00D5A2A8 /* Mol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2820D29F17F483FB00D5A2A8 /* Mol.cpp */; };
 		2820D2A317F4841700D5A2A8 /* Bond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2820D2A217F4841700D5A2A8 /* Bond.cpp */; };
 		2820D2A717F4C3B600D5A2A8 /* Point3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2820D2A617F4C3B600D5A2A8 /* Point3D.cpp */; };
+		287C8404181AB9410072AFE1 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 287C8403181AB9410072AFE1 /* Vertex.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,10 @@
 		2820D2A417F4BF3200D5A2A8 /* 1a0j.pdb */ = {isa = PBXFileReference; lastKnownFileType = text; path = 1a0j.pdb; sourceTree = "<group>"; };
 		2820D2A517F4C32B00D5A2A8 /* Point3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Point3D.h; sourceTree = "<group>"; };
 		2820D2A617F4C3B600D5A2A8 /* Point3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point3D.cpp; sourceTree = "<group>"; };
+		287C8402181AB8D00072AFE1 /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		287C8403181AB9410072AFE1 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cpp; sourceTree = "<group>"; };
+		28D952BF181AC096007C8C56 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		28D952C0181AC0B5007C8C56 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,10 @@
 				2820D2A217F4841700D5A2A8 /* Bond.cpp */,
 				2820D2A517F4C32B00D5A2A8 /* Point3D.h */,
 				2820D2A617F4C3B600D5A2A8 /* Point3D.cpp */,
+				287C8402181AB8D00072AFE1 /* Vertex.h */,
+				287C8403181AB9410072AFE1 /* Vertex.cpp */,
+				28D952BF181AC096007C8C56 /* Mesh.h */,
+				28D952C0181AC0B5007C8C56 /* Triangle.h */,
 			);
 			path = GLTest;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 				2820D28917F35BCD00D5A2A8 /* main.cpp in Sources */,
 				2820D29D17F483C700D5A2A8 /* QAtom.cpp in Sources */,
 				2820D2A017F483FB00D5A2A8 /* Mol.cpp in Sources */,
+				287C8404181AB9410072AFE1 /* Vertex.cpp in Sources */,
 				2820D2A317F4841700D5A2A8 /* Bond.cpp in Sources */,
 				2820D2A717F4C3B600D5A2A8 /* Point3D.cpp in Sources */,
 			);
