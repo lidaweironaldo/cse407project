@@ -13,7 +13,7 @@
 #include "QAtom.h"
 #include "Bond.h"
 
-#include<vector>
+#include <vector>
 
 using namespace std;
 

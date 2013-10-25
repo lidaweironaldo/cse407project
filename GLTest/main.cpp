@@ -6,12 +6,17 @@
 //  Copyright (c) 2013 Dawei Li. All rights reserved.
 //
 
-#include<string>
-#include<map>
+#include <string>
+#include <map>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <iterator>
 #include <stdlib.h>
 #include <math.h>
+#include <vector>
 #include "Mol.h"
+#include "Mesh.h"
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
@@ -26,6 +31,15 @@
 using namespace std;
 
 Mol myMol;
+Mesh myMesh;
+
+#ifndef PDB
+#define PDB 1
+#endif
+
+#ifndef SURF
+#define SURF 2
+#endif
 
 //General Number
 float sizeofsphere=0.03;
@@ -48,7 +62,54 @@ static void AddTmpBonds(string st, vector<int> &v)
     //	printf("Found %i conect\n",i);
 }
 
+bool is_number(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
+}
 
+bool readSurf(const char *_filename)
+{
+    ifstream surfHdlr(_filename);
+    string temp_line;
+    //int count=0;
+    
+    if(surfHdlr.is_open())
+    {
+        while(surfHdlr.good())
+        {
+            getline(surfHdlr, temp_line);
+            istringstream iss(temp_line);
+            vector<string> tokens{istream_iterator<string>{iss},
+                istream_iterator<string>{}};
+            if (tokens.size()==6)
+            {
+                if(is_number(tokens[0].substr(4,2)))
+                {
+                    //count++;
+                    //cout<<"number"<<atof(tokens[5].c_str())<<endl;
+                    myMesh.vertices.push_back(Vertex(atof(tokens[0].c_str()),atof(tokens[1].c_str()),atof(tokens[2].c_str()),atof(tokens[3].c_str()),atof(tokens[4].c_str()),atof(tokens[5].c_str())));
+                }
+            }
+            if (tokens.size()==3)
+            {
+                if(is_number(tokens[0]))
+                {
+                    Triangle t = Triangle();
+                    t.t3p.push_back(&myMesh.vertices[atoi(tokens[0].c_str())]);
+                    t.t3p.push_back(&myMesh.vertices[atoi(tokens[1].c_str())]);
+                    t.t3p.push_back(&myMesh.vertices[atoi(tokens[2].c_str())]);
+                    myMesh.trianlges.push_back(t);
+                }
+            }
+                
+        }
+    }
+    //cout<<count<<endl;
+    
+    return true;
+}
 
 bool readPdb(const char* _filename)
 {
@@ -230,7 +291,11 @@ int main(int argc, char** argv)
 {
 //    myMol = Mol();
 //    readPdb("/Users/valdeshuang/Desktop/paper/Computer_Graphics/GLTest/GLTest/1a0j.pdb");
-    
+    myMesh = Mesh();
+    readSurf("/Users/dal312/Dropbox/2013_Fall/407/1a0j.SURF");
+    cout<<"number of triangles: "<<(myMesh.trianlges[0].t3p[0]->px)<<endl;
+    cout<<"Finish";
+    return 0;
     
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
